@@ -1,0 +1,18 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace 'ar.simon.tuentiwidget'
+    compileSdk 35
+    defaultConfig {
+        applicationId 'ar.simon.tuentiwidget'
+        minSdk 23
+        targetSdk 35
+        versionCode 9
+        versionName '0.7'
+    }
+}
+
+dependencies {
+    implementation 'com.google.code.gson:gson:2.11.0'
+    testImplementation 'junit:junit:4.13.2'
+}
