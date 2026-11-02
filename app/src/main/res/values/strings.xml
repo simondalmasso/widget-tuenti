@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Tuenti Odometro</string>
+    <string name="widget_description">Medidor visual de consumo de gigas de Tuenti</string>
+    <string name="accessibility_service_description">Lee solo los consumos visibles dentro de la app oficial de Tuenti para actualizar el medidor.</string>
+</resources>
