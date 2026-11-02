@@ -8,7 +8,7 @@ Widget Android para consultar el consumo del combo de datos de Tuenti Argentina 
 - Método de lectura en desarrollo: servicio Android Accessibility restringido a la app oficial.
 - No se solicitan credenciales ni se implementa un segundo inicio de sesión dentro del widget.
 - Interfaz objetivo: medidor circular/donut de consumo, sin textos pequeños; muestra GB usados y total (o GB restantes, según el dato real disponible).
-- Tamaño del widget: se conserva el tamaño cuadrado compacto existente.
+- Tamaño del widget: se conserva el formato compacto existente (75 × 42 dp mínimos).
 
 ## Limitaciones importantes
 
@@ -25,20 +25,20 @@ La ruta menos invasiva es leer los textos que la app oficial expone en su árbol
 ## Build
 
 ```bash
-./gradlew testDebugUnitTest assembleDebug
+gradle testDebugUnitTest assembleDebug
 ```
 
 En Windows:
 
 ```bat
-gradlew.bat testDebugUnitTest assembleDebug
+gradle testDebugUnitTest assembleDebug
 ```
 
 APK debug: `app/build/outputs/apk/debug/app-debug.apk`.
 
 ## Privacidad
 
-El proyecto no debe almacenar contraseñas, tokens de sesión ni contenido ajeno a los datos de consumo. El servicio debe filtrar estrictamente el paquete `com.tuentiargentina` y guardar solo los valores de consumo necesarios para actualizar el widget.
+El proyecto no debe almacenar contraseñas, tokens de sesión ni contenido ajeno a los datos de consumo. El servicio debe filtrar estrictamente el paquete `com.tuentiargentina` y guardar solo los valores de consumo necesarios para actualizar el widget. La caché usa preferencias privadas de esta app; no almacena credenciales, aunque todavía no cifra esos valores.
 
 ## Referencias
 
