@@ -1,0 +1,8 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_root" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="horizontal" android:gravity="center_vertical" android:padding="2dp"
+    android:background="@drawable/widget_bg">
+    <ImageView android:id="@+id/usage_gauge" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:scaleType="fitCenter"
+        android:contentDescription="Medidor de consumo de datos Tuenti" />
+</LinearLayout>
