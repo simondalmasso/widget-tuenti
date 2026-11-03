@@ -73,8 +73,11 @@ final class BalanceData {
         String[] lines = text.replace('\u00a0', ' ')
                 .replace("\r", "\n").split("\n");
         int start = -1;
+        boolean hasComboLabel = normalized.contains("combo");
         for (int i = 0; i < lines.length; i++) {
-            if (lines[i].toLowerCase(Locale.ROOT).contains("datos disponibles")) {
+            String label = lines[i].trim();
+            if (label.toLowerCase(Locale.ROOT).contains("datos disponibles")
+                    || (hasComboLabel && label.equalsIgnoreCase("disponibles"))) {
                 start = i;
                 break;
             }
