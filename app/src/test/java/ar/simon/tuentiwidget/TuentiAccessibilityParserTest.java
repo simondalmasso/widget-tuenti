@@ -17,6 +17,18 @@ public class TuentiAccessibilityParserTest {
     }
 
     @Test
+    public void parserReadsActiveComboHitCardFromCurrentHomeScreen() {
+        BalanceData balance = TuentiAccessibilityParser.parse(
+                "Hola Tuenti\nCombo Hit\nDisponibles\n8 GB\nde 8 GB\n"
+                        + "Gigas\nVence en");
+
+        assertNotNull(balance);
+        assertFalse(balance.noCombo);
+        assertEquals(8L * 1024 * 1024 * 1024, balance.remainingBytes);
+        assertEquals(8L * 1024 * 1024 * 1024, balance.initialBytes);
+    }
+
+    @Test
     public void parserRecognizesCapturedNoComboHierarchy() {
         String hierarchy = "Hola Tuenti\n"
                 + "0342 Línea móvil - Prepago\n"
